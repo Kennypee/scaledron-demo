@@ -9,6 +9,10 @@ const cors = require("cors");
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use((req, res) => {
+  res.send(req.body)
+
+});
 
 
 const sd = new Scaledrone({
